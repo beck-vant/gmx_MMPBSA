@@ -55,7 +55,6 @@ setup(
         "scipy>=1.14",
         "mpi4py>=4",
         "parmed>=4.2.2",
-        "cpptraj @ https://github.com/Amber-MD/cpptraj@7.0.0",
         "tqdm",
     ],
     entry_points={
