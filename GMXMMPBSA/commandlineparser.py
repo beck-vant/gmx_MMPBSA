@@ -163,8 +163,8 @@ group.add_argument('-deo', dest='dec_energies', metavar='FILE',
                   residue in decomposition calculations. File name forced to end
                   in [.csv]. This file is only written when specified on the
                   command-line.''')
-group.add_argument('-nogui', dest='gui', action='store_false', default=True,
-                   help='No open gmx_MMPBSA_ana after all calculations finished')
+group.add_argument('-gui', dest='gui', action='store_true', default=False,
+                   help='Open gmx_MMPBSA_ana after all calculations finished')
 group.add_argument('-s', '--stability', dest='stability', action='store_true', default=False,
                    help='''Perform stability calculation. Only the complex parameters are required. If
                          ligand is non-Protein (small molecule) type, then ligand *.mol2 file is 
