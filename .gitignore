@@ -1,2 +1,4 @@
 .idea
 *.pyc
+build/
+gmx_MMPBSA.egg-info

@@ -18,40 +18,51 @@
 
 from setuptools import setup, find_packages
 import versioneer
-import sys
 
 with open("README.md", "r") as f:
     LONG_DESCRIPTION = f.read()
 
-if sys.version_info[:2] != (3, 11):
-    raise RuntimeError("gmx_MMPBSA requires python == 3.11")
-
 setup(
-    name='gmx_MMPBSA',
+    name="gmx_MMPBSA",
     version=versioneer.get_version(),
     cmdclass=versioneer.get_cmdclass(),
     packages=find_packages(),
-    package_data={"GMXMMPBSA": ["data/*", 'data/gmxMMPBSA/*', 'data/xvv_files/*', 'analyzer/style/*', 'GMXMMPBSA.sh']},
-    license='GPLv3',
-    author='Mario S. Valdes-Tresanco and Mario E. Valdes-Tresanco ',
-    author_email='mariosergiovaldes145@gmail.com',
-    maintainer='Mario S. Valdes-Tresanco',
-    maintainer_email='mariosergiovaldes145@gmail.com',
-    url='https://github.com/Valdes-Tresanco-MS/gmx_MMPBSA',
+    package_data={
+        "GMXMMPBSA": [
+            "data/*",
+            "data/gmxMMPBSA/*",
+            "data/xvv_files/*",
+            "analyzer/style/*",
+            "GMXMMPBSA.sh",
+        ]
+    },
+    license="GPLv3",
+    author="Mario S. Valdes-Tresanco and Mario E. Valdes-Tresanco ",
+    author_email="mariosergiovaldes145@gmail.com",
+    maintainer="Mario S. Valdes-Tresanco",
+    maintainer_email="mariosergiovaldes145@gmail.com",
+    url="https://github.com/Valdes-Tresanco-MS/gmx_MMPBSA",
     description="gmx_MMPBSA is a new tool based on AMBER's MMPBSA.py aiming to perform end-state free energy  "
-                "calculations with GROMACS files",
+    "calculations with GROMACS files",
     long_description=LONG_DESCRIPTION,
-    long_description_content_type='text/markdown',
-    keywords=['gmx_MMPBSA', 'MMPBSA', 'MMGBSA', 'GROMACS', 'AmberTools'],
-    install_requires=['numpy==1.26.4', 'pandas==1.5.3',
-                      'matplotlib==3.7.3', 'seaborn==0.11.2',
-                      'scipy==1.14.1',
-                      'mpi4py==4.0.1',
-                      'parmed>=4.2.2',
-                      'tqdm'],
+    long_description_content_type="text/markdown",
+    keywords=["gmx_MMPBSA", "MMPBSA", "MMGBSA", "GROMACS", "AmberTools"],
+    install_requires=[
+        "numpy>=2",
+        "pandas>=2",
+        "matplotlib>=3",
+        "seaborn>=0.13",
+        "scipy>=1.14",
+        "mpi4py>=4",
+        "parmed>=4.2.2",
+        "cpptraj @ https://github.com/Amber-MD/cpptraj@7.0.0",
+        "tqdm",
+    ],
     entry_points={
         "console_scripts": [
             "gmx_MMPBSA=GMXMMPBSA.app:gmxmmpbsa",
             "gmx_MMPBSA_ana=GMXMMPBSA.app:gmxmmpbsa_ana",
-            "gmx_MMPBSA_test=GMXMMPBSA.app:gmxmmpbsa_test"]}
+            "gmx_MMPBSA_test=GMXMMPBSA.app:gmxmmpbsa_test",
+        ]
+    },
 )

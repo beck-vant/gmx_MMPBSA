@@ -1,6 +1,5 @@
 from typing import Union
 from matplotlib.colors import LinearSegmentedColormap
-from matplotlib.cm import datad
 from pathlib import Path
 import json
 from GMXMMPBSA.analyzer.style import *
@@ -1168,7 +1167,8 @@ color_store = {
     }
 }
 
-seismic_colors = [list(map(lambda x: x * 255, c)) for c in datad['seismic']]
+_seismic_anchors = [(0.0, 0.0, 0.3), (0.0, 0.0, 1.0), (1.0, 1.0, 1.0), (1.0, 0.0, 0.0), (0.5, 0.0, 0.0)]
+seismic_colors = [[x * 255 for x in c] for c in _seismic_anchors]
 
 
 class Palettes:

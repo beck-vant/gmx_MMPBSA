@@ -80,13 +80,13 @@ errors are more frequent.
             $ conda activate gmxMMPBSA
             
             // Install mpi4py and AmberTools
-            $ conda install -c conda-forge "mpi4py=4.0.1" "ambertools<=23.3" -y -q
+            $ conda install -c conda-forge "mpi4py>=4" "ambertools<=23.3" -y -q
 
             // Install dependencies for ploting
-            $ conda install -c conda-forge "numpy=1.26.4" "matplotlib=3.7.3" "scipy=1.14.1" "pandas=1.5.3" "seaborn=0.11.2" -y -q
+            $ conda install -c conda-forge "numpy>=2" "matplotlib>=3" "scipy>=1.14" "pandas>=2" "seaborn>=0.13" -y -q
 
             // Install PyQt6 required to use the GUI analyzer tool (gmx_MMPBSA_ana). Not needed for HPC
-            $ python -m pip install "pyqt6==6.7.1"    
+            $ python -m pip install "pyqt6>=6.7"    
 
             // (Optional) Install GROMACS
             $ conda install -c conda-forge "gromacs<=2023.4" pocl -y -q
@@ -100,9 +100,9 @@ errors are more frequent.
                 conda update conda
                 conda create -n gmxMMPBSA python=3.11.8 -y -q                                      # (1)
                 conda activate gmxMMPBSA                                                        # (2)
-                conda install -c conda-forge "mpi4py=4.0.1" "ambertools<=23.3" -y -q               # (3)
-                conda install -c conda-forge "numpy=1.26.4" "matplotlib=3.7.3" "scipy=1.14.1" "pandas=1.5.3" "seaborn=0.11.2" -y -q # (4)
-                python -m pip install "pyqt6==6.7.1"                                            # (5)
+                conda install -c conda-forge "mpi4py>=4" "ambertools<=23.3" -y -q               # (3)
+                conda install -c conda-forge "numpy>=2" "matplotlib>=3" "scipy>=1.14" "pandas>=2" "seaborn>=0.13" -y -q # (4)
+                python -m pip install "pyqt6>=6.7"                                            # (5)
                 # Optional
                 conda install -c conda-forge "gromacs<=2023.4" pocl -y -q                         # (6)
                

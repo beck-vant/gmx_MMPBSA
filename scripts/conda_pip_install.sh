@@ -18,13 +18,13 @@ conda install -c conda-forge "ambertools=23.3" -y -q
 conda install -c conda-forge "gromacs=2023.4" pocl -y -q
 
 # pip for all other dependencies
-pip install "matplotlib==3.7.3" \
-            "mpi4py==4.0.1"     \
-            "numpy==1.26.4"     \
-            "pandas==1.5.3"     \
-            "pyqt6==6.7.1"     \
-            "scipy==1.14.1"     \
-            "seaborn==0.11.2"   \
+pip install "matplotlib>=3" \
+            "mpi4py>=4"     \
+            "numpy>=2"      \
+            "pandas>=2"     \
+            "pyqt6>=6.7"    \
+            "scipy>=1.14"   \
+            "seaborn>=0.13" \
             gmx_MMPBSA
 
 # very important: test that everything works
